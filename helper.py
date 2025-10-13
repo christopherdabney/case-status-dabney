@@ -84,9 +84,16 @@ def filter_cell_phone_numbers(phone_numbers, firm):
     return valid_numbers
 
 
-def _update_client(session, client_instance, field_names):
-    # Placeholder for client update logic
-    return True
+def _update_client(session, client_instance, client_data_to_update):
+    # Update the fields of the client record
+    updated = False
+    for field, value in client_data_to_update.items():
+        if hasattr(client_instance, field) and value is not None:
+            setattr(client_instance, field, value)
+            updated = True
+    if updated:
+        session.commit()
+    return updated
 
 
 class ImportCaseHelper:
