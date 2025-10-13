@@ -101,7 +101,7 @@ class ImportCaseHelper:
     @staticmethod
     def parse_cell_phone_number(number, firm):
         # Implement parsing logic here
-        return number
+        return True
 
     @staticmethod
     def import_client_handler(
@@ -144,6 +144,7 @@ class ImportCaseHelper:
             phone_numbers = []
 
         filtered_cell_phone_numbers = filter_cell_phone_numbers(phone_numbers, firm)
+
         primary_number = (
             filtered_cell_phone_numbers[0] if filtered_cell_phone_numbers else None
         )
@@ -202,7 +203,6 @@ class ImportCaseHelper:
                 if orphaned_user:
                     row["cell_phone"] = phone_number
                     break
-
         if not client_instance and not orphaned_user:
             if integration_type in (
                 IntegrationHelper.CSV_IMPORT,

@@ -27,7 +27,10 @@ This project uses a virtual environment created with `uv` and installs Flask via
     ```zsh
     uv pip install -r requirements.txt
     ```
-
+4. **Install Packages:**
+    ```zsh
+    python app.py
+    ```
 ## Requirements
 - Python 3.12+
 - uv (for venv and pip)
