@@ -19,7 +19,7 @@ install-backend:
 		python3 -m venv .venv; \
 	fi
 	@echo "Activating virtual environment and installing packages..."
-	@. .venv/bin/activate && pip install -r requirements.txt
+	@. .venv/bin/activate && cd case-status-interview-be && pip install -r requirements.txt
 	@echo "✅ Backend dependencies installed"
 
 # Install frontend dependencies  
@@ -32,7 +32,7 @@ install-frontend:
 run:
 	@echo "🚀 Starting Flask backend on http://127.0.0.1:5000"
 	@echo "Press Ctrl+C to stop"
-	@. .venv/bin/activate && python app.py
+	@. .venv/bin/activate && cd case-status-interview-be && python app.py
 
 # Run frontend Next.js server (eats terminal)
 next:
@@ -43,7 +43,7 @@ next:
 # Run unit tests
 tests:
 	@echo "🧪 Running unit tests..."
-	@. .venv/bin/activate && python -m unittest discover
+	@. .venv/bin/activate && cd case-status-interview-be && python -m unittest discover tests
 	@echo "✅ All tests completed"
 
 # Clean up build artifacts and dependencies
