@@ -46,6 +46,12 @@ tests:
 	@. .venv/bin/activate && cd case-status-interview-be && python -m unittest discover tests
 	@echo "✅ All tests completed"
 
+# Run a specific test file
+# Usage: make test-file FILE=test_import_client_handler.py
+test-file:
+	@echo "🧪 Running test file: $(FILE)"
+	@. .venv/bin/activate && cd case-status-interview-be && python -m unittest $(FILE:%.py=%)
+
 # Clean up build artifacts and dependencies
 clean:
 	@echo "🧹 Cleaning up..."

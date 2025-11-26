@@ -36,7 +36,7 @@ class ImportClientHandlerTestCase(unittest.TestCase):
         self.app_context.pop()
 
     def test_update_preexisting_client(self):
-        from app import Client
+        from models import Client
 
         # Create a client first
         row = {}
