@@ -44,12 +44,11 @@ def encrypt_ssn(ssn):
 def filter_cell_phone_numbers(phone_numbers, firm):
     """Filter and validate phone numbers based on firm settings."""
     # Import here to avoid circular import
-    from services import ImportCaseHelper
     valid_numbers = []
     for number in phone_numbers:
-        valid_number = ImportCaseHelper.parse_cell_phone_number(number, firm)
-        if valid_number:
-            valid_numbers.append(valid_number)
+        is_valid = ImportCaseHelper.parse_cell_phone_number(number, firm)
+        if is_valid:
+            valid_numbers.append(number)  # Append the actual number, not True
     return valid_numbers
 
 
