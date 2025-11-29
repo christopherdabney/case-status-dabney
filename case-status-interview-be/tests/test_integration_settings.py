@@ -13,7 +13,7 @@ import unittest
 from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper
+from services import ImportCaseHelper
 
 
 class MockClient:

@@ -1,7 +1,9 @@
 import unittest
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper, ClientRepository
+from services import ImportCaseHelper
+from repositories import ClientRepository
+from models import Firm
 
 
 class Firm:

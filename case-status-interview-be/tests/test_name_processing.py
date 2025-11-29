@@ -13,7 +13,8 @@ import unittest
 from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper, CLIENT_MISSING_NAME
+from services import ImportCaseHelper
+from helper import CLIENT_MISSING_NAME
 
 
 class MockFirm:

@@ -14,7 +14,9 @@ from unittest.mock import Mock, patch, MagicMock
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
-from helper import ImportCaseHelper, ClientRepository, UserRepository, encrypt_ssn, USER_ALREADY_EXISTS
+from services import ImportCaseHelper
+from repositories import ClientRepository, UserRepository
+from helper import encrypt_ssn, USER_ALREADY_EXISTS
 
 
 class MockClient:

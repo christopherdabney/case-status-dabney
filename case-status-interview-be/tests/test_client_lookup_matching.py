@@ -13,7 +13,9 @@ import unittest
 from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper, ClientRepository, identify_orphaned_user_by_phone_number
+from services import ImportCaseHelper
+from repositories import ClientRepository
+from helper import identify_orphaned_user_by_phone_number
 
 
 class MockClient:

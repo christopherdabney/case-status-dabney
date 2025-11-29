@@ -10,11 +10,12 @@ Tests the database transaction handling for:
 """
 
 import unittest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import IntegrityError, DatabaseError
-from helper import ImportCaseHelper, ClientRepository, USER_ALREADY_EXISTS
+from services import ImportCaseHelper
+from repositories import ClientRepository
+from helper import USER_ALREADY_EXISTS
 
 
 class MockClient:

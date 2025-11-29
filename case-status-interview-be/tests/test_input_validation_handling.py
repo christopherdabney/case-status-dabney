@@ -13,7 +13,9 @@ import unittest
 from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper, IntegrationHelper, CLIENT_MISSING_NAME, CELL_PHONE_INVALID
+from services import ImportCaseHelper
+from constants import IntegrationHelper
+from helper import CLIENT_MISSING_NAME, CELL_PHONE_INVALID
 
 
 class MockFirm:

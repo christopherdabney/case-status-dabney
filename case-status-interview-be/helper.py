@@ -6,15 +6,10 @@ Repository layer is in repositories.py, service layer is in services.py.
 """
 from sqlalchemy import exc
 from repositories import ClientRepository, UserRepository
-from services import ImportCaseHelper
 
-# Integration Helper Classes
-
-class IntegrationHelper:
-    """Constants and helpers for integration types."""
-    CSV_IMPORT = "CSV_IMPORT"
-    THIRD_PARTY = "THIRD_PARTY"
-    MYCASE = "MYCASE"
+# Integration Helper Classes (now in constants.py)
+# Import from constants to maintain backwards compatibility
+from constants import IntegrationHelper
 
 
 # Utility Functions
@@ -41,12 +36,11 @@ def encrypt_ssn(ssn):
     return ssn
 
 
-def filter_cell_phone_numbers(phone_numbers, firm):
+def filter_cell_phone_numbers(phone_numbers, firm, parse_func):
     """Filter and validate phone numbers based on firm settings."""
-    # Import here to avoid circular import
     valid_numbers = []
     for number in phone_numbers:
-        is_valid = ImportCaseHelper.parse_cell_phone_number(number, firm)
+        is_valid = parse_func(number, firm)
         if is_valid:
             valid_numbers.append(number)  # Append the actual number, not True
     return valid_numbers

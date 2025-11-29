@@ -10,10 +10,13 @@ Tests the client update scenarios for:
 """
 
 import unittest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from helper import ImportCaseHelper, ClientRepository, _update_client, IntegrationHelper, CLIENT_UPDATED, CLIENT_CONTACT_INFO_FIELD_NAMES
+from services import ImportCaseHelper
+from repositories import ClientRepository
+from helper import _update_client, CLIENT_UPDATED, CLIENT_CONTACT_INFO_FIELD_NAMES
+from constants import IntegrationHelper
 
 
 class MockClient:
