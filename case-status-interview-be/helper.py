@@ -6,7 +6,7 @@ Repository layer is in repositories.py, service layer is in services.py.
 """
 from sqlalchemy import exc
 from repositories import ClientRepository, UserRepository
-
+from services import ImportCaseHelper
 
 # Integration Helper Classes
 
@@ -72,7 +72,3 @@ CLIENT_NOT_FOUND_STOP_ZAP = "Client not found, stopping import."
 USER_ALREADY_EXISTS = "User already exists: {}, {}"
 CLIENT_UPDATED = "Client updated."
 CLIENT_CONTACT_INFO_FIELD_NAMES = ["first_name", "last_name", "email", "cell_phone"]
-
-
-# Backwards Compatibility - Re-export service layer
-from services import ImportCaseHelper

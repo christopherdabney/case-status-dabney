@@ -6,6 +6,7 @@ Services orchestrate repositories and implement complex workflows.
 """
 from sqlalchemy import exc
 from repositories import ClientRepository, UserRepository
+from models import Client
 from helper import (
     IntegrationHelper, 
     CLIENT_MISSING_NAME, 
@@ -347,7 +348,7 @@ class ImportCaseHelper:
                 email_address = client_email_address if not user else None
 
             try:
-                from models import Client
+                
 
                 # Create Client instance properly for SQLAlchemy
                 client_instance = Client()
